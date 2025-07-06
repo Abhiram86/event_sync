@@ -14,10 +14,22 @@ A full-stack event engagement app built with React Native (Expo) and Node.js + G
 ### Backend
 
 - Node.js
+- TypeScript
 - GraphQL
 - Prisma (ORM)
 - PostgreSQL (hosted on Neon)
 - Socket.io (real-time communication)
+
+## 📸 Screenshots
+
+<img src="./media/login.jpg" alt="App Login" width="300" />
+<img src="./media/home.jpg" alt="App Home" width="300" />
+<img src="./media/events.jpg" alt="App Events" width="300" />
+<img src="./media/live.jpg" alt="App Live" width="300" />
+
+## 🎥 Demo Video
+
+[▶️ watch demo](./media/demo/demo.mp4)
 
 ## 📦 Project Structure
 
@@ -99,7 +111,7 @@ A full-stack event engagement app built with React Native (Expo) and Node.js + G
 - One-tap event check-in
 - Real-time attendee updates via WebSocket
 - Live participant list for each event
-- Persistent authentication
+- JWT authentication
 
 ## 🔒 Environment Variables
 
