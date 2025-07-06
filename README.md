@@ -89,7 +89,7 @@ A full-stack event engagement app built with React Native (Expo) and Node.js + G
 
 5. Start Expo app:
    ```bash
-   npm start
+   npm run start
    ```
    - Scan the QR code with Expo Go app on your phone.
 
@@ -99,7 +99,6 @@ A full-stack event engagement app built with React Native (Expo) and Node.js + G
 - One-tap event check-in
 - Real-time attendee updates via WebSocket
 - Live participant list for each event
-- Responsive mobile UI
 - Persistent authentication
 
 ## 🔒 Environment Variables
