@@ -124,3 +124,14 @@ A full-stack event engagement app built with React Native (Expo) and Node.js + G
 | ------------ | ------------- | ------------------------- |
 | DATABASE_URL | .env (server) | PostgreSQL connection URI |
 | SECRET_KEY   | .env (server) | Used for mock auth/tokens |
+
+## 🧪 Mock Data
+
+You can use the following credentials to simulate login during development:
+
+| Email            | Password |
+| ---------------- | -------- |
+| abhira@gmail.com | 1234     |
+| abhi@gmail.com   | 12345678 |
+
+These users are pre-inserted or mocked in the backend for testing authentication.
