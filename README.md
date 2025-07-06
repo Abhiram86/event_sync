@@ -1,120 +1,110 @@
 # 📲 Real-Time Event Check-In App
 
-This is a full-stack event engagement app built using **React Native (Expo)** and **Node.js + GraphQL + Prisma + PostgreSQL**, allowing users to browse events and join them in real time.
-
-> ✅ When a user joins an event, everyone else sees them appear instantly via **Socket.io**.
-
----
+A full-stack event engagement app built with React Native (Expo) and Node.js + GraphQL + Prisma + PostgreSQL, featuring real-time updates via Socket.io.
 
 ## 🚀 Tech Stack
 
-| Layer      | Tech                                             |
-| ---------- | ------------------------------------------------ |
-| Language   | TypeScript                                       |
-| Backend    | Node.js, GraphQL, Prisma, Socket.io              |
-| Database   | PostgreSQL (hosted on [Neon](https://neon.tech)) |
-| Frontend   | React Native (Expo)                              |
-| State Mgmt | Zustand, TanStack Query                          |
+### Frontend
 
----
+- React Native (Expo)
+- TypeScript
+- Zustand (state management)
+- TanStack Query (data fetching)
 
-## 📦 Folder Structure
+### Backend
 
+- Node.js
+- GraphQL
+- Prisma (ORM)
+- PostgreSQL (hosted on Neon)
+- Socket.io (real-time communication)
+
+## 📦 Project Structure
+
+```
 /
-├── server → Node.js backend
-└── client → Expo (React Native) frontend
-
-yaml
-Copy
-Edit
-
----
+├── server/ # Node.js backend
+├── client/ # Expo frontend
+```
 
 ## ⚙️ Setup Instructions
 
-> 🔗 Ensure your **mobile device and PC are connected to the same Wi-Fi network**.
+> 🔗 Important: Your mobile device and development machine must be on the same Wi-Fi network.
 
----
+### 📁 1. Server Setup
 
-### 📁 1. Server Setup (`/server`)
+1. Navigate to server directory:
 
-1. Install dependencies:
    ```bash
    cd server
-   npm install
-   Create a .env file:
    ```
 
-env
-Copy
-Edit
-DATABASE_URL=your_postgres_database_url
-SECRET_KEY=your_secret_key
-Run the Prisma migration:
+2. Install dependencies:
 
-bash
-Copy
-Edit
-npx prisma migrate dev --name init
-Start the server:
+   ```bash
+   npm install
+   ```
 
-bash
-Copy
-Edit
-npm run dev
-📱 2. Client Setup (/client)
-Install dependencies:
+3. Create .env file:
 
-bash
-Copy
-Edit
-cd client
-npm install
-Set the server IP:
+   ```env
+   DATABASE_URL=your_postgres_database_url
+   SECRET_KEY=your_secret_key
+   ```
 
-Open:
+4. Run database migrations:
 
-client/api/event.ts
+   ```bash
+   npx prisma migrate dev --name init
+   ```
 
-client/app/auth.ts
+5. Start the server:
+   ```bash
+   npm run dev
+   ```
 
-Replace the base URL (e.g., http://localhost:8080) with your local network IP, something like:
+### 📱 2. Client Setup
 
-ts
-Copy
-Edit
-const BASE_URL = "http://192.168.x.x:8080";
-To find your IP:
+1. Navigate to client directory:
 
-On Windows: ipconfig
+   ```bash
+   cd client
+   ```
 
-On macOS/Linux: ifconfig or ip a
+2. Install dependencies:
 
-Start the Expo app:
+   ```bash
+   npm install
+   ```
 
-bash
-Copy
-Edit
-npm start
-Open the Expo Go app on your phone and scan the QR code displayed in your terminal.
+3. Update server IP:
 
-🧪 Demo Credentials
-You can log in with any mock credentials. The backend simulates authentication based on static token handling.
+   - Open `client/api/event.ts` and `client/app/auth.ts`
+   - Replace `base_url` constant with your local network IP (e.g., `http://192.168.x.x:8080`)
 
-✅ Features
-View a list of upcoming events
+4. 💡 Find your IP:
 
-Join any event with one tap
+   - Windows: `ipconfig`
+   - macOS/Linux: `ifconfig` or `ip a`
 
-Real-time attendee updates using WebSocket
+5. Start Expo app:
+   ```bash
+   npm start
+   ```
+   - Scan the QR code with Expo Go app on your phone.
 
-Live participant list per event
+## ✅ Features
 
-Clean and responsive mobile UI
+- Browse upcoming events
+- One-tap event check-in
+- Real-time attendee updates via WebSocket
+- Live participant list for each event
+- Responsive mobile UI
+- Persistent authentication
 
-Persistent auth with Zustand
+## 🔒 Environment Variables
 
-🔒 Environment Variables
-Variable Location Description
-DATABASE_URL .env (server) PostgreSQL connection URI
-SECRET_KEY .env (server) Used for mock auth/token validation
+| Variable     | Location      | Description               |
+| ------------ | ------------- | ------------------------- |
+| DATABASE_URL | .env (server) | PostgreSQL connection URI |
+| SECRET_KEY   | .env (server) | Used for mock auth/tokens |
